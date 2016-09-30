@@ -1,5 +1,17 @@
 # ReactPivot #
 
+---
+
+NOTE: This is a fork of the original component by David Guttman. 
+Generally, this component has most of the same functionality and strong consideration should be made to using the original component.
+This version fixes a couple things, and adds a couple other things. These changes are listed here:
+
+* Updates the standalone library to be compatible with React 15.3.2
+
+
+
+---
+
 ReactPivot is a data-grid component with pivot-table-like functionality for data display, filtering, and exploration. Can be used without React.
 
 Demo: [http://davidguttman.github.io/react-pivot/](http://davidguttman.github.io/react-pivot/)
