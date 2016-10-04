@@ -29,6 +29,7 @@ module.exports = React.createClass({
       nPaginateRows: 25,
       solo: null,
       hiddenColumns: [],
+      hiddenColumnsSorted: false,
       sortBy: null,
       sortDir: 'asc',
       eventBus: new Emitter,
@@ -68,7 +69,7 @@ module.exports = React.createClass({
 
     this.updateRows()
   },
-  
+
   componentWillReceiveProps: function(newProps) {
     if(newProps.rows !== this.props.rows) {
       this.dataFrame = DataFrame({
@@ -76,7 +77,7 @@ module.exports = React.createClass({
         dimensions: this.props.dimensions,
         reduce: this.props.reduce
       })
-      
+
       this.updateRows()
     }
   },
@@ -120,6 +121,7 @@ module.exports = React.createClass({
       }
 
         <ColumnControl
+          sorted={this.props.hiddenColumnsSorted}
           hiddenColumns={this.state.hiddenColumns}
           onChange={this.setHiddenColumns} />
 

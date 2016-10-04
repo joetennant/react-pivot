@@ -2,12 +2,12 @@
 
 ---
 
-NOTE: This is a fork of the original component by David Guttman. 
+NOTE: This is a fork of the original component by David Guttman.
 Generally, this component has most of the same functionality and strong consideration should be made to using the original component.
 This version fixes a couple things, and adds a couple other things. These changes are listed here:
 
 * Updates the standalone library to be compatible with React 15.3.2
-
+* Hidden column list can be sorted by providing sortHiddenColumns=true property
 
 
 ---

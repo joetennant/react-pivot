@@ -1,21 +1,26 @@
-var _ = { without: require('lodash/without') }
+var _ = { without: require('lodash/without'), sortBy: require('lodash/sortBy') }
 var React = require('react')
 
 module.exports = React.createClass({
   getDefaultProps: function () {
     return {
+      sorted: false,
       hiddenColumns: [],
       onChange: function () {}
     }
   },
 
   render: function () {
+
+    //sort hidden columns
+    var sorted = this.props.sorted ? _.sortBy(this.props.hiddenColumns) : this.props.hiddenColumns;
+
     return (
       <div className='reactPivot-columnControl'>
-        { !this.props.hiddenColumns.length ? '' :
+        { !sorted.length ? '' :
           <select value={''} onChange={this.showColumn}>
             <option value={''}>Hidden Columns</option>
-            { this.props.hiddenColumns.map(function(column) {
+            { sorted.map(function(column) {
               return <option key={column}>{column}</option>
             })}
           </select>
