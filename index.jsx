@@ -27,6 +27,7 @@ module.exports = React.createClass({
       csvTemplateFormat: false,
       defaultStyles: true,
       nPaginateRows: 25,
+      clearText: '- Clear -',
       solo: null,
       hiddenColumns: [],
       hiddenColumnsSorted: false,
@@ -117,7 +118,8 @@ module.exports = React.createClass({
         <Dimensions
           dimensions={this.props.dimensions}
           selectedDimensions={this.state.dimensions}
-          onChange={this.setDimensions} />
+          onChange={this.setDimensions}
+          clearText={this.props.clearText} />
       }
 
         <ColumnControl

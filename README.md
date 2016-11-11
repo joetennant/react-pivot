@@ -8,6 +8,7 @@ This version fixes a couple things, and adds a couple other things. These change
 
 * Updates the standalone library to be compatible with React 15.3.2
 * Hidden column list can be sorted by providing sortHiddenColumns=true property
+* Text to clear dimension can be customized
 
 
 ---

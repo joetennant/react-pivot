@@ -19,7 +19,7 @@ module.exports = React.createClass({
       <div className='reactPivot-columnControl'>
         { !sorted.length ? '' :
           <select value={''} onChange={this.showColumn}>
-            <option value={''}>Hidden Columns</option>
+            <option value={''}>- Hidden Columns -</option>
             { sorted.map(function(column) {
               return <option key={column}>{column}</option>
             })}

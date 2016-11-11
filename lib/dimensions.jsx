@@ -7,6 +7,7 @@ module.exports = React.createClass({
     return {
       dimensions: [],
       selectedDimensions: [],
+      clearText: '',
       onChange: function () {}
     }
   },
@@ -21,7 +22,7 @@ module.exports = React.createClass({
         {selectedDimensions.map(this.renderDimension)}
 
         <select value={''} onChange={partial(self.toggleDimension, nSelected)}>
-          <option value={''}>Sub Dimension...</option>
+          <option value={''}>- Sub Dimension -</option>
           {self.props.dimensions.map(function(dimension) {
             return <option key={dimension.title}>{dimension.title}</option>
           })}
@@ -36,7 +37,7 @@ module.exports = React.createClass({
         value={selectedDimension}
         onChange={partial(this.toggleDimension, i)}
         key={selectedDimension} >
-        <option></option>
+        <option>{this.props.clearText}</option>
         {this.props.dimensions.map(function(dimension) {
           return (
             <option
@@ -53,6 +54,10 @@ module.exports = React.createClass({
   toggleDimension: function (iDimension, evt) {
     var dimension = evt.target.value
     var dimensions = this.props.selectedDimensions
+
+    if (dimension === this.props.clearText) {
+      dimension = '';
+    }
 
     var curIdx = dimensions.indexOf(dimension)
     if (curIdx >= 0) dimensions[curIdx] = null

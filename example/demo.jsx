@@ -79,7 +79,8 @@ var Demo = React.createClass({
         </p>
 
         <div className={this.state.showInput ? 'hide' : ''}>
-          <ReactPivot rows={data}
+          <ReactPivot clearText="- Clear Dimension -"
+                      rows={data}
                       dimensions={dimensions}
                       calculations={calculations}
                       reduce={reduce}
